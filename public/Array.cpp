@@ -127,3 +127,97 @@ public:
         return ele;
     }
 };
+// rearrange array by sign
+vector<int> rearrangeArray(vector<int>& nums) {
+        int n=nums.size();
+        vector<int>ans(n,0);
+        int pos=0, neg=1;
+        for(int i=0;i<n;i++){
+            if(nums[i]<0){
+                ans[neg]=nums[i];
+                neg+=2;
+            }else{
+                ans[pos]=nums[i];
+                pos+=2;
+            }
+        }
+        return ans;
+        
+    };
+    // maxSubarray sum
+
+    int maxSubArray(vector<int>& nums) {
+         int currSum=nums[0];
+         int maxSum=nums[0];
+         for(int i=1;i<nums.size();i++){
+            currSum=max(nums[i],nums[i]+currSum);
+            maxSum=max(maxSum,currSum);
+         }
+     return maxSum;
+         
+        
+    }
+    //sort colors
+
+    void sortColors(vector<int>& nums) {
+        int z=0;
+        int t=nums.size()-1;
+        int i=0;
+                    while(i<=t){
+                    if(nums[i]==0){
+                    swap(nums[i],nums[z]);
+                    z++;
+                    i++;
+                    }else if (
+                        nums[i]==1){
+
+                        i++;}
+                        
+                        else if
+                           ( nums[i]==2){
+                            swap(nums[i],nums[t]);
+                            t--;}
+                            
+                        }
+
+                    }
+
+  //best time to buy and sell stocks
+   int maxProfit(vector<int>& prices) {
+        int minimum=prices[0];
+        int profit=0;
+        for(int i=1;i<prices.size();i++){
+            profit=max(profit,prices[i]-minimum);
+            minimum=min(minimum,prices[i]);
+        }
+        return profit;
+        
+    }                
+    //leaders in an array
+    vector<int> leaders(vector<int>& arr) {
+    vector<int> res;
+    int n = arr.size();
+    
+    for (int i = 0; i < n; i++) {
+        int j;
+
+        
+        for (j = i + 1; j < n; j++) {
+
+            // If a larger element is found,
+            // break the loop
+            if (arr[i] < arr[j])
+                break;
+        }
+
+        
+        if (j == n) 
+            res.push_back(arr[i]);
+    }
+    
+    return res;
+}
+
+
+
+
