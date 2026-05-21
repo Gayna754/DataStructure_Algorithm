@@ -3,12 +3,33 @@
 #include <unordered_map>
 #include<unordered_set>
 #include <algorithm>
+#include <queue>
 using namespace std;
 
 class Solution {
 
 
+
 public:
+vector<int> majorityElement(vector<int>& nums) {
+        unordered_map<int,int>mp;
+        for(int i=0;i<nums.size();i++){
+            mp[nums[i]]++;
+        }
+        priority_queue<pair<int,int>> pq;
+        for(auto it:mp){
+            pq.push({it.second, it.first});;
+        }
+        vector<int>ans;
+        
+        while(!pq.empty() && pq.top().first>nums.size()/3){
+            int second=pq.top().second;
+            ans.push_back(second);
+            pq.pop();
+        
+        }
+        return ans;
+    }
 
 vector<int> spiralOrder(vector<vector<int>>& matrix) {
         int n=matrix.size();
