@@ -11,6 +11,21 @@ class Solution {
 
 
 public:
+int getMin(int arr[], int n)
+{
+    int res = arr[0];
+    for (int i = 1; i < n; i++)
+        res = min(res, arr[i]);
+    return res;
+}
+
+int getMax(int arr[], int n)
+{
+    int res = arr[0];
+    for (int i = 1; i < n; i++)
+        res = max(res, arr[i]);
+    return res;
+}
  long merge(vector<int>& arr, int low, int mid, int high) {
         vector<int> temp;
 
