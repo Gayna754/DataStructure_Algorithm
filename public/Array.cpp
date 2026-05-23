@@ -11,6 +11,31 @@ class Solution {
 
 
 public:
+public:
+    vector<int> findMissingAndRepeatedValues(vector<vector<int>>& grid) {
+        vector<int>temp;
+        for(auto row:grid){
+        for(auto x:row){
+            temp.push_back(x);}
+        }
+        sort(temp.begin(),temp.end());
+        unordered_map<int,int>mp;
+        vector<int>ans;
+        int n=temp.size();
+        for(int i=0;i<temp.size();i++){
+            mp[temp[i]]++;}
+            for(auto it:mp){
+                if(it.second>1){
+                    ans.push_back(it.first);
+                }
+            }
+        for(int i=1;i<=temp.size();i++){
+            if(mp[i]==0){
+                ans.push_back(i);
+            }
+        }return ans;
+        
+    }
 void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
         int i=m-1;
         int j=n-1;
