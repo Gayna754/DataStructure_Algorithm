@@ -14,6 +14,56 @@ class Solution {
 
 public:
 
+vector<int> ans;
+
+    vector<pair<int,int>> mergeSort(vector<pair<int,int>>& arr) {
+        if(arr.size() <= 1) return arr;
+
+        int mid = arr.size() / 2;
+
+        vector<pair<int,int>> left(arr.begin(), arr.begin()+mid);
+        vector<pair<int,int>> right(arr.begin()+mid, arr.end());
+
+        left = mergeSort(left);
+        right = mergeSort(right);
+
+        vector<pair<int,int>> res;
+        int i = 0, j = 0, count = 0;
+
+        while(i < left.size() && j < right.size()) {
+            if(right[j].first < left[i].first) {
+                res.push_back(right[j++]);
+                count++;
+            } else {
+                ans[left[i].second] += count;
+                res.push_back(left[i++]);
+            }
+        }
+
+        while(i < left.size()) {
+            ans[left[i].second] += count;
+            res.push_back(left[i++]);
+        }
+
+        while(j < right.size()) {
+            res.push_back(right[j++]);
+        }
+
+        return res;
+    }
+
+    vector<int> countSmaller(vector<int>& nums) {
+        int n = nums.size();
+        ans.assign(n, 0);
+
+        vector<pair<int,int>> arr;
+        for(int i = 0; i < n; i++) {
+            arr.push_back({nums[i], i});
+        }
+
+        mergeSort(arr);
+        return ans;
+    }
  int maxProduct(vector<int>& nums) {
         
 
