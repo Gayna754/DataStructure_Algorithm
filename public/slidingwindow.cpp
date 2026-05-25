@@ -9,6 +9,55 @@ using namespace std;
 
 class Solution {
     public:
+    vector<int> getSubarrayBeauty(vector<int>& nums, int k, int x) {
+
+        vector<int> ans;
+
+        // frequency array for -50 to 50
+        vector<int> freq(101, 0);
+
+        int i = 0;
+        int j = 0;
+
+        while (j < nums.size()) {
+
+            // add current element
+            freq[nums[j] + 50]++;
+
+            // window not complete
+            if (j - i + 1 < k) {
+                j++;
+            }
+
+            // window size = k
+            else {
+
+                int count = 0;
+                int beauty = 0;
+
+                // check only negative numbers
+                for (int num = -50; num <= -1; num++) {
+
+                    count += freq[num + 50];
+
+                    if (count >= x) {
+                        beauty = num;
+                        break;
+                    }
+                }
+
+                ans.push_back(beauty);
+
+                // remove left element
+                freq[nums[i] + 50]--;
+
+                i++;
+                j++;
+            }
+        }
+
+        return ans;
+    }
     vector<int> firstNegInt(vector<int>& arr, int k) {
         int j=0;
         int i=0;
