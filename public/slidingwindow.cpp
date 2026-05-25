@@ -13,7 +13,6 @@ class Solution {
 
         vector<int> ans;
 
-        // frequency array for -50 to 50
         vector<int> freq(101, 0);
 
         int i = 0;
@@ -29,13 +28,13 @@ class Solution {
                 j++;
             }
 
-            // window size = k
+            // 
             else {
 
                 int count = 0;
                 int beauty = 0;
 
-                // check only negative numbers
+               
                 for (int num = -50; num <= -1; num++) {
 
                     count += freq[num + 50];
@@ -48,7 +47,7 @@ class Solution {
 
                 ans.push_back(beauty);
 
-                // remove left element
+                
                 freq[nums[i] + 50]--;
 
                 i++;
