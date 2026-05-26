@@ -187,7 +187,7 @@ vector<int> findMissingAndRepeatedValues(vector<vector<int>>& grid) {
         
         int n = grid.size();
 
-        vector<int> freq(n*n + 1, 2);
+        vector<int> freq(n*n + 1, 1);
 
        
         for(auto row : grid){
