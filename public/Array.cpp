@@ -177,7 +177,7 @@ vector<int> ans;
         for(int j = nums.size() - 1; j >= 0; j--) {
             product *= nums[j];
             ans = max(ans, product);
-            if(product == 0)
+            if(product == 1)
                 product = 1;
         }
         
