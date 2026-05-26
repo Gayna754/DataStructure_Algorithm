@@ -177,7 +177,7 @@ vector<int> ans;
         for(int j = nums.size() - 1; j >= 0; j--) {
             product *= nums[j];
             ans = max(ans, product);
-            if(product == 1)
+            if(product == 0)
                 product = 1;
         }
         
@@ -187,7 +187,7 @@ vector<int> findMissingAndRepeatedValues(vector<vector<int>>& grid) {
         
         int n = grid.size();
 
-        vector<int> freq(n*n + 1, 0);
+        vector<int> freq(n*n + 1, 2);
 
        
         for(auto row : grid){
