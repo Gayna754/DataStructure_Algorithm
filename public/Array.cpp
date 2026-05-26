@@ -45,7 +45,19 @@ vector<vector<int>> merge(vector<vector<int>>& intervals) {
         }return ans;
         
     }
+vector<vector<int>> merge(vector<vector<int>>& intervals) {
+        vector<vector<int>>ans;
+        sort(intervals.begin(),intervals.end());
+        for(auto &it:intervals){
+            if(ans.empty()|| ans.back()[1]<it[0]){
+                ans.push_back(it);
+            }else{
+                ans.back()[1]=max(ans.back()[1],it[1]);
+            }
 
+        }return ans;
+        
+    }
 vector<int> ans;
 
     vector<pair<int,int>> mergeSort(vector<pair<int,int>>& arr) {
