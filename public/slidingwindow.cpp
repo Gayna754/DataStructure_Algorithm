@@ -126,7 +126,7 @@ class Solution {
     }
     vector<int> firstNegInt(vector<int>& arr, int k) {
         int j=0;
-        int i=0;
+        int i=1;
         queue<int>q;
         vector<int>temp;
        
