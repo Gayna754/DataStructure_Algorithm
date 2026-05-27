@@ -14,7 +14,7 @@ class Solution {
         unordered_map<int,int>mp;
        
         long long ans=0;
-        int i=0,j=1;
+        int i=0,j=0;
         long long sum=0;
         while(j<nums.size()){
             sum+=nums[j];
