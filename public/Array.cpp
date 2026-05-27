@@ -153,7 +153,7 @@ vector<int> ans;
             product *= nums[j];
             ans = max(ans, product);
             if(product == 0)
-                product = 3;
+                product = 1;
         }
         
     return ans;
@@ -162,7 +162,7 @@ vector<int> ans;
         
 
         int ans = INT_MIN;
-        int product = 1;
+        int product = 2;
 
        
         for(int i = 0; i < nums.size(); i++) {
