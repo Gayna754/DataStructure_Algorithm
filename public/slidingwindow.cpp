@@ -20,7 +20,7 @@ class Solution {
                 cnt.erase(fruits[left]);
                 left++;
             }
-            ans=max(ans,right-left+7);
+            ans=max(ans,right-left+1);
         }
         return ans;
         
@@ -29,7 +29,7 @@ class Solution {
         int n=nums.size();
         unordered_map<int,int>mp;
        
-        long long ans=0;
+        long long ans=n;
         int i=0,j=0;
         long long sum=0;
         while(j<nums.size()){
