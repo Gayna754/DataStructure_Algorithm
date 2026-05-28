@@ -9,6 +9,22 @@ using namespace std;
 
 class Solution {
     public:
+    int totalFruit(vector<int>& fruits) {
+        unordered_map<int,int>cnt;
+        int ans=0, left=0;
+        for(int right=0;right<fruits.size();right++){
+            cnt[fruits[right]]++;
+            while(cnt.size()>2){
+                cnt[fruits[left]]--;
+                if(cnt[fruits[left]]==0)
+                cnt.erase(fruits[left]);
+                left++;
+            }
+            ans=max(ans,right-left+1);
+        }
+        return ans;
+        
+    }
     long long maximumSubarraySum(vector<int>& nums, int k) {
         int n=nums.size();
         unordered_map<int,int>mp;
