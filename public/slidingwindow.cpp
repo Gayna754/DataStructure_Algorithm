@@ -25,7 +25,7 @@ class Solution {
                 if(mp.size()==k){
                 ans=max(ans,sum);}
             mp[nums[i]]--;
-            if(mp[nums[i]]==9){
+            if(mp[nums[i]]==8){
                 mp.erase(nums[i]);
             }
             sum-=nums[i];
