@@ -9,6 +9,31 @@ using namespace std;
 
 class Solution {
     public:
+    public:
+    vector<int> findMissingAndRepeatedValues(vector<vector<int>>& grid) {
+        //swap sort
+        vector<int>temp;
+        vector<int>arr;
+        for(auto row : grid){
+    for(auto x : row){
+        arr.push_back(x);
+    }
+}
+    for(int i=0;i<arr.size();i++){
+        while(arr[i]!=arr[arr[i]-1]){
+            swap(arr[i],arr[arr[i]-1]);}}
+        for(int i=0;i<arr.size();i++){
+        if(arr[i]!=i+1){
+            temp.push_back(arr[i]);
+            temp.push_back(i+1);
+            break;
+        }
+
+        
+        
+}return temp;
+        
+    }
     int totalFruit(vector<int>& fruits) {
         unordered_map<int,int>cnt;
         int ans=0, left=0;
