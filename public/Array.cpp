@@ -13,6 +13,23 @@ class Solution {
 
 
 public:
+ void moveZeroes(vector<int>& nums) {
+        int p=0;
+        int n=nums.size();
+        int i=0;
+        while(p<n && nums[p]!=0)
+        p++;
+         i=p+1;
+        while(i<n){
+         if(  nums[i]==0){
+            i++;}
+            else{
+                swap(nums[p],nums[i]);
+                i++;
+                p++;}
+            }
+
+        }
  int maxSubarraySum(vector<int>& arr, int k) {
         int ans=INT_MIN;
         int i=0;
