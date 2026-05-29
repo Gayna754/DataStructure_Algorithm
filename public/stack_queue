@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <vector>
+#include <unordered_map>
+#include<unordered_set>
+#include <algorithm>
+#include <queue>
+#include <iostream>
+#include<stack>
+using namespace std;
+
+class Solution {
+    
+    public:
+    string decodeString(string s) {
+        stack<char>st;
+        for(char ch:s){
+            if(ch!=']'){
+                st.push(ch);
+            }
+            else{
+                string temp="";
+                while(!st.empty()&&st.top()!='['){
+                    temp=st.top()+temp;
+                    st.pop();
+                }
+                st.pop();
+                string num="";
+                while(!st.empty()&&isdigit(st.top())){
+                    num=st.top()+num;
+                    st.pop();
+                    
+                }int k=stoi(num);
+                string count="";
+                for (int i =0;i<k ;i++){
+                    count+=temp;
+                }
+                for(char c:count){
+                    st.push(c);
+                }
+            }
+        }
+                string ans="";
+                while(!st.empty()){
+                ans=st.top()+ans;
+                st.pop();
+
+            }
+
+        return ans;
+        
+    }
+};
