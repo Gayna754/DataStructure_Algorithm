@@ -8,7 +8,7 @@
 using namespace std;
 
 class Solution {
-    public:
+    
     public:
     vector<int> findMissingAndRepeatedValues(vector<vector<int>>& grid) {
         //swap sort
