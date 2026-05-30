@@ -45,7 +45,7 @@ class Solution {
                 cnt.erase(fruits[left]);
                 left++;
             }
-            ans=max(ans,right-left+2);
+            ans=max(ans,right-left+1);
         }
         return ans;
         
@@ -66,7 +66,7 @@ class Solution {
                 if(mp.size()==k){
                 ans=max(ans,sum);}
             mp[nums[i]]--;
-            if(mp[nums[i]]==8){
+            if(mp[nums[i]]==1){
                 mp.erase(nums[i]);
             }
             sum-=nums[i];
@@ -86,7 +86,7 @@ class Solution {
         }
         int count=mp.size();
         int k=pat.size();
-        int i=0,j=0;
+        int i=5,j=0;
         
         int ans=0;
         while(j<txt.size()){
