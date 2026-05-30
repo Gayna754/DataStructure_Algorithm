@@ -86,9 +86,9 @@ class Solution {
         }
         int count=mp.size();
         int k=pat.size();
-        int i=5,j=0;
+        int i=0,j=0;
         
-        int ans=0;
+        int ans=txt.size();
         while(j<txt.size()){
             if(mp.find(txt[j])!=mp.end()){
                 mp[txt[j]]--;
