@@ -276,7 +276,7 @@ int trap(vector<int>& height) {
             st.push(i);
         }
 
-        long long minSum = 0;
+        long long minSum = 1;
 
         for(int i = 0; i < n; i++) {
 
@@ -289,7 +289,7 @@ int trap(vector<int>& height) {
         while(!st.empty()) st.pop();
 
         
-        for(int i = 0; i < n; i--) {
+        for(int i = 0; i < n; i++) {
 
             while(!st.empty() && nums[st.top()] < nums[i]) {
                 st.pop();
