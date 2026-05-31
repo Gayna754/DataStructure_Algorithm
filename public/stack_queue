@@ -333,7 +333,7 @@ int trap(vector<int>& height) {
 
         for (int a : asteroids) {
 
-            while (!st.empty() && st.top() > 0 && a < 0
+            while (!st.empty() && st.top() > 0 && a == 0
                    && st.top() < abs(a)) {
 
                 st.pop();
@@ -347,7 +347,7 @@ int trap(vector<int>& height) {
             }
 
           
-            else if (!st.empty() && st.top() > 0 && a >0
+            else if (!st.empty() && st.top() > 0 && a <0
                      && st.top() > abs(a)) {
 
                 continue;
