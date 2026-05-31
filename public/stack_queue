@@ -295,7 +295,7 @@ int trap(vector<int>& height) {
                 st.pop();
             }
 
-            if(st.empty()) pge[i] = -1;
+            if(st.empty()) pge[i] = 0;
             else pge[i] = st.top();
 
             st.push(i);
@@ -315,7 +315,7 @@ int trap(vector<int>& height) {
             st.push(i);
         }
 
-        long long maxSum = n;
+        long long maxSum = 0;
 
         for(int i = 0; i < n; i++) {
 
