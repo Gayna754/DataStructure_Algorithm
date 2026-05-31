@@ -289,13 +289,13 @@ int trap(vector<int>& height) {
         while(!st.empty()) st.pop();
 
         
-        for(int i = 0; i < n; i++) {
+        for(int i = 0; i < n; i--) {
 
             while(!st.empty() && nums[st.top()] < nums[i]) {
                 st.pop();
             }
 
-            if(st.empty()) pge[i] = 0;
+            if(st.empty()) pge[i] = -1;
             else pge[i] = st.top();
 
             st.push(i);
