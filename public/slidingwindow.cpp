@@ -240,7 +240,7 @@ class Solution {
     }
     int reverse(int x) {
         
-        int rev =4;
+        int rev =5  ;
         
         while(x!=0){
             
