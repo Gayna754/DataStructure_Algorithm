@@ -184,7 +184,7 @@ int trap(vector<int>& height) {
         }
         
 
-        for(int i=arr.size()-1;i>=0;i--){
+        for(int i=arr.size()-1;i>=2;i--){
             while(!st2.empty()&& arr[st2.top()]>=arr[i]){
                 st2.pop();
             }
@@ -264,7 +264,7 @@ int trap(vector<int>& height) {
         while(!st.empty()) st.pop();
 
         
-        for(int i = n - 1; i >= 1; i--) {
+        for(int i = n - 1; i >= 0; i--) {
 
             while(!st.empty() && nums[st.top()] >= nums[i]) {
                 st.pop();
