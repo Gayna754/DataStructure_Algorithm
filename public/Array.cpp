@@ -30,6 +30,150 @@ public:
             }
 
         }
+        int firstoccurence(vector<int>nums,int target){
+       int low=0;
+        int high=nums.size()-1;
+        int ans=-1;
+        while(low<=high){
+        int mid=low+(high-low)/2;
+        if(nums[mid]==target){
+            ans=mid;
+          high=mid-1;
+        }
+        else if(nums[mid]<target){
+            low=mid+1;
+
+        }
+        else{
+            high=mid-1;}
+        }
+        return ans;
+
+
+        
+    }
+
+    int lastocc(vector<int>nums,int target){
+        int low=0;
+        int high=nums.size()-1;
+        int ans=-1;
+        while(low<=high){
+        int mid=low+(high-low)/2;
+        if(nums[mid]==target){
+            ans=mid;
+          low=mid+1;
+        }
+        else if(nums[mid]<target){
+            low=mid+1;
+
+        }
+        else{
+            high=mid-1;}
+        }
+        return ans;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+    vector<int> searchRange(vector<int>& nums, int target) {
+        int first=firstoccurence(nums,target);
+        int last=lastocc(nums,target);
+        return {first,last};
+
+       
+    }
+    int reverse(int x) {
+        
+        int rev =0;
+        
+        while(x!=0){
+            
+             if (rev > INT_MAX/10 || (rev == INT_MAX/10 && x%10 > 7)) return 0;
+            if (rev < INT_MIN/10 || (rev == INT_MIN/10 && x%10 < -8)) return 0;          rev=rev*10+x%10;
+            x/=10;
+        }
+        return rev;
+
+
+            
+
+        }
+        int firstoccurence(vector<int>nums,int target){
+       int low=0;
+        int high=nums.size()-1;
+        int ans=-1;
+        while(low<=high){
+        int mid=low+(high-low)/2;
+        if(nums[mid]==target){
+            ans=mid;
+          high=mid-1;
+        }
+        else if(nums[mid]<target){
+            low=mid+1;
+
+        }
+        else{
+            high=mid-1;}
+        }
+        return ans;
+
+
+        
+    }
+
+    int lastocc(vector<int>nums,int target){
+        int low=0;
+        int high=nums.size()-1;
+        int ans=-1;
+        while(low<=high){
+        int mid=low+(high-low)/2;
+        if(nums[mid]==target){
+            ans=mid;
+          low=mid+1;
+        }
+        else if(nums[mid]<target){
+            low=mid+1;
+
+        }
+        else{
+            high=mid-1;}
+        }
+        return ans;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+    vector<int> searchRange(vector<int>& nums, int target) {
+        int first=firstoccurence(nums,target);
+        int last=lastocc(nums,target);
+        return {first,last};
+
+       
+    }
  int maxSubarraySum(vector<int>& arr, int k) {
         int ans=INT_MIN;
         int i=0;
