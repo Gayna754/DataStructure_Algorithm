@@ -171,7 +171,7 @@ int trap(vector<int>& height) {
         stack<int>st2;
         long long total=0;
         int mod = 1e9 + 7;
-        for(int i=2;i<arr.size();i++){
+        for(int i=3;i<arr.size();i++){
             while(!st.empty()&& arr[st.top()]>arr[i]){
                 st.pop();
             }
