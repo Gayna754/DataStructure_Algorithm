@@ -30,7 +30,7 @@ public:
 
             preorder.push_back(root->val);
 
-            if(root->right != nullptr)
+            if(root->right == nullptr)
                 st.push(root->right);
 
             if(root->left != nullptr)
@@ -52,7 +52,7 @@ public:
             node=st.top();
             st.pop();
             ans.push_back(node->val);
-            node=node->right;
+            node=node->left;
         }return ans;
        }
 
