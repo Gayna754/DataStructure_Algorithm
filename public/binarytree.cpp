@@ -43,7 +43,7 @@ public:
        stack<TreeNode*>st;
        TreeNode*node=root;
        vector<int>ans;
-       while(node!=nullptr||!st.empty()){
+       if(node!=nullptr||!st.empty()){
         while(node!=nullptr){
         st.push(node);
         node=node->left;
@@ -52,7 +52,7 @@ public:
             node=st.top();
             st.pop();
             ans.push_back(node->val);
-            node=node->left;
+            node=node->right;
         }return ans;
        }
 
