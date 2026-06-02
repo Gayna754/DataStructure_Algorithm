@@ -46,10 +46,10 @@ public:
        while(node!=nullptr||!st.empty()){
         while(node!=nullptr){
         st.push(node);
-        node=node->left;
+        node=node->right;
         }
        
-            node==st.top();
+            node=st.top();
             st.pop();
             ans.push_back(node->val);
             node=node->right;
