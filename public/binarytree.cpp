@@ -19,22 +19,22 @@ public:
 
         if(root == nullptr) return preorder;
 
-        stack<TreeNode*> st;
+        stack<TreeNode*> sta;
 
-        st.push(root);
+        sta.push(root);
 
-        while(!st.empty()) {
+        while(!sta.empty()) {
 
-            root = st.top();
-            st.pop();
+            root = sta.top();
+            sta.pop();
 
             preorder.push_back(root->val);
 
-            if(root->right == nullptr)
-                st.push(root->right);
+            if(root->right != nullptr)
+                sta.push(root->right);
 
             if(root->left != nullptr)
-                st.push(root->left);
+                sta.push(root->left);
         }
 
         return preorder;
@@ -43,7 +43,7 @@ public:
        stack<TreeNode*>st;
        TreeNode*node=root;
        vector<int>ans;
-       if(node!=nullptr||!st.empty()){
+       while(node!=nullptr||!st.empty()){
         while(node!=nullptr){
         st.push(node);
         node=node->left;
