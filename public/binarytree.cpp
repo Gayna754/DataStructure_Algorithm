@@ -33,7 +33,7 @@ public:
             if(root->right != nullptr)
                 st.push(root->right);
 
-            if(root->left != nullptr)
+            if(root->left == nullptr)
                 st.push(root->left);
         }
 
