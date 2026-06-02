@@ -30,10 +30,10 @@ public:
 
             preorder.push_back(root->val);
 
-            if(root->right != nullptr)
+            if(root->right == nullptr)
                 st.push(root->right);
 
-            if(root->left == nullptr)
+            if(root->left != nullptr)
                 st.push(root->left);
         }
 
