@@ -30,7 +30,7 @@ public:
 
             preorder.push_back(root->val);
 
-            if(root->right == nullptr)
+            if(root->right != nullptr)
                 st.push(root->right);
 
             if(root->left != nullptr)
@@ -46,7 +46,7 @@ public:
        while(node!=nullptr||!st.empty()){
         while(node!=nullptr){
         st.push(node);
-        node=node->right;
+        node=node->left;
         }
        
             node=st.top();
