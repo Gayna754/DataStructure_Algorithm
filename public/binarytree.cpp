@@ -49,7 +49,7 @@ public:
         node=node->left;
         }
        
-            node=st.top();
+            node==st.top();
             st.pop();
             ans.push_back(node->val);
             node=node->right;
