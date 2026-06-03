@@ -43,7 +43,7 @@ public:
        stack<TreeNode*>st;
        TreeNode*node=root;
        vector<int>ans;
-       while(node!=nullptr&&!st.empty()){
+       while(node!=nullptr||!st.empty()){
         while(node!=nullptr){
         st.push(node);
         node=node->left;
@@ -55,5 +55,11 @@ public:
             node=node->right;
         }return ans;
        }
+        bool isSameTree(TreeNode* p, TreeNode* q) {
+        if(p==NULL&&q==NULL)return true;
+        if(p==nullptr||q==NULL)return false;
+        return (p->val==q->val)&&isSameTree(p->left,q->left)&&isSameTree(p->right,q->right);
+        
+    }
 
 };
