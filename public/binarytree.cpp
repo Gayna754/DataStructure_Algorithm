@@ -191,5 +191,21 @@ public:
         if(abs(left-right)>1) return false;
         return isBalanced(root->left)&&isBalanced(root->right);      
     }
+    int dia=0;
+      int height(TreeNode*root){
+        if(root==nullptr)return 0;
+        int left=height(root->left);
+        int right=height(root->right);
+        dia=max(dia,left+right);// to find max dia of all height and update
+        return 1+max(left,right);//to find max height of all 
+      }
+
+
+
+    int diameterOfBinaryTree(TreeNode* root) {
+        height(root);
+        return dia;
+        
+    }
 
 };
