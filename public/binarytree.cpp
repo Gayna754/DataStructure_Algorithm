@@ -228,5 +228,36 @@ public:
         return(p->val==q->val)&&isSameTree(p->left,q->left)&&isSameTree(p->right,q->right);
         
     }
+    vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
+        vector<vector<int>>result;
+        if(root==nullptr)return result;
+
+      queue<TreeNode*>q;
+      q.push(root);
+      bool flag=true;
+      while(!q.empty()){
+        int size=q.size();
+        vector<int>row(size);
+        for(int i=0;i<size;i++){
+        TreeNode*root=q.front();
+        q.pop();
+        int index = flag?i:size-1-i;
+        row[index]=root->val;
+        if(root->left!=NULL)q.push(root->left);
+        if(root->right!=NULL)q.push(root->right);
+        }
+        
+        flag=!flag;
+        result.push_back(row);
+       
+      
+        
+        
+        
+      }return result;
+
+
+        
+    }
 
 };
