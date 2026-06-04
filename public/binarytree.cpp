@@ -259,5 +259,48 @@ public:
 
         
     }
-
+bool isLeaf(TreeNode* node){
+        return (node->left == NULL && node->right == NULL);
+    }
+  void left(TreeNode*root,vector<int>&res){
+     TreeNode*curr=root->left;
+     while(curr){
+         if(!isLeaf(curr))res.push_back(curr->val);
+         if(curr->left)curr=curr->left;
+         else curr=curr->right;
+     }
+  }
+   void right(TreeNode*root,vector<int>&res){
+       TreeNode*curr=root->right;
+        vector<int>temp;
+       while(curr){
+           if(!isLeaf(curr))temp.push_back(curr->val);
+           if(curr->right)curr=curr->right;
+           else curr=curr->left;}
+           for(int i=temp.size()-1;i>=0;i--){
+               res.push_back(temp[i]);
+           }
+       
+   }
+   void leaves(TreeNode*root,vector<int>&res){
+       if(isLeaf(root)){
+           res.push_back(root->val);
+           return;
+           
+           
+       }
+       if(root->left)leaves(root->left,res);
+       if(root->right)leaves(root->right,res);
+   }
+        vector<int> boundaryTraversal(TreeNode *root) {
+        vector<int>res;
+        if(root==nullptr)return res;
+        if(!isLeaf(root))res.push_back(root->val);
+        left(root,res);
+        leaves(root,res);
+        right(root,res);
+        return res;
+        
+        
+    }
 };
