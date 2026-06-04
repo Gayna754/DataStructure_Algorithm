@@ -222,5 +222,11 @@ public:
        
         
     }
+    bool isSameTree(TreeNode* p, TreeNode* q) {
+        if(q==nullptr&&p==nullptr)return true;
+        if(q==nullptr|| p==nullptr)return false;
+        return(p->val==q->val)&&isSameTree(p->left,q->left)&&isSameTree(p->right,q->right);
+        
+    }
 
 };
