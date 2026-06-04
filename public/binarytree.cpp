@@ -207,5 +207,20 @@ public:
         return dia;
         
     }
+    int pathsum(TreeNode*root,int&maxi){
+            if(root==NULL)return 0;
+            int left=max(0,pathsum(root->left,maxi));
+            int right=max(0,pathsum(root->right,maxi));
+            maxi=max(root->val+left+right,maxi);
+            return max(left,right)+root->val;
+        }
+        int maxPathSum(TreeNode* root) {
+        int maxi=INT_MIN;
+        pathsum(root,maxi);
+        return maxi;
+
+       
+        
+    }
 
 };
