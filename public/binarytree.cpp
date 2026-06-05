@@ -460,5 +460,17 @@ bool isLeaf(TreeNode* node){
         }
         return ans;
     }
+    bool ismirrot(TreeNode*right,TreeNode*left){
+    if(right==NULL&& left==NULL)return true;
+    if(right==NULL || left== NULL)return false;
+
+    if(right->val!=left->val)return false;
+    return ismirrot(left->left,right->right)&&ismirrot(left->right,right->left);
+}
+ bool isSymmetric(TreeNode* root) {
+        if(root==nullptr)return true;
+        return ismirrot(root->left,root->right);
+        
+    }
 
 };
