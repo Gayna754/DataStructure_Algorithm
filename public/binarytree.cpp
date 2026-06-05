@@ -496,5 +496,29 @@ bool isLeaf(TreeNode* node){
 
         
     }
+vector<string>result;
+void dfs(TreeNode*node,string path){
+           
+            if(node==nullptr)return;
+            if(node->left==NULL&&node->right==NULL){
+                result.push_back(path);
 
+            }
+        
+         if(node->left){
+            dfs(node->left,path+"->"+to_string(node->left->val));
+         }
+         if(node->right){
+            dfs(node->right,path+"->"+to_string(node->right->val));
+         }
+}
+        
+    vector<string> binaryTreePaths(TreeNode* root) {
+        if(root==nullptr)return{};
+        dfs(root,to_string(root->val));
+        return result;
+
+     
+       
+    }
 };
