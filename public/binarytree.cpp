@@ -410,4 +410,29 @@ bool isLeaf(TreeNode* node){
         return ans;
         
     }
+    vector<int> bottomView(Node *root) {
+        vector<int>ans;
+        if(root==nullptr)return ans;
+        map<int,int>mp;
+        queue<pair<Node*,int>>q;
+        q.push({root,0});
+        while(!q.empty()){
+        auto it=q.front();
+        q.pop();
+        Node*root=it.first;
+        int wdth=it.second;
+        mp[wdth]=root->data;
+        if(root->left){
+            q.push({root->left,wdth-1});}
+        if(root->right){
+            q.push({root->right,wdth+1});}
+        
+        }
+        for(auto x:mp){
+            ans.push_back(x.second);
+        }
+        
+        return ans;
+        
+    }
 };
