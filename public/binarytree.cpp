@@ -6,6 +6,7 @@
 #include <set>     // multiset is in <set>
 #include <queue>
 #include <vector>
+#include<string>
 using namespace std;
 
 struct TreeNode {
@@ -470,6 +471,29 @@ bool isLeaf(TreeNode* node){
  bool isSymmetric(TreeNode* root) {
         if(root==nullptr)return true;
         return ismirrot(root->left,root->right);
+        
+    }
+    vector<string> binaryTreePaths(TreeNode* root) {
+        vector<string>result;
+        queue<pair<TreeNode*,string>>q;
+        q.push({root,to_string(root->val)});
+        while(!q.empty()){
+            auto it=q.front();
+            q.pop();
+            TreeNode*node=it.first;
+            string path=it.second;
+            if(node->left==NULL&& node->right==NULL){
+            result.push_back(path);}
+            if(node->left){
+                q.push({node->left,path+"->"+to_string(node->left->val)});
+            }
+            if(node->right){
+                q.push({node->right,path+"->"+to_string(node->right->val)});
+            }
+            }
+        
+        return result;
+
         
     }
 
