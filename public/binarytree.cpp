@@ -575,4 +575,13 @@ void dfs(TreeNode*node,string path){
         }
         
     }
+    bool isSumProperty(TreeNode *root) {
+        if(root==nullptr)return true;
+        if(root->left==NULL&&root->right==NULL)return true;
+        int left=0,right=0;
+        if(root->left)left=root->left->val;
+        if(root->right)right=root->right->val;
+        return (root->val==left+right)&&isSumProperty(root->left)&&isSumProperty(root->right);
+        
+    }
 };
