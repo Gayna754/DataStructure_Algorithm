@@ -606,5 +606,5 @@ void dfs(TreeNode*node,string path){
         TreeNode*right=lowestCommonAncestor(root->right,p,q);
         if(left==NULL)return right;
         else if(right==NULL)return left;
-         return root;
+         return root;}
 };
