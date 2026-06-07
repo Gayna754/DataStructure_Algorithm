@@ -600,4 +600,11 @@ void dfs(TreeNode*node,string path){
          return root;
 
     }
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        if(root==nullptr||root==q||root==p)return root;
+        TreeNode*left=lowestCommonAncestor(root->left,p,q);
+        TreeNode*right=lowestCommonAncestor(root->right,p,q);
+        if(left==NULL)return right;
+        else if(right==NULL)return left;
+         return root;
 };
