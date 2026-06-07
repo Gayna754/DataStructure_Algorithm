@@ -584,4 +584,20 @@ void dfs(TreeNode*node,string path){
         return (root->val==left+right)&&isSumProperty(root->left)&&isSumProperty(root->right);
         
     }
+      vector<string> binaryTreePaths(TreeNode* root) {
+        if(root==nullptr)return{};
+        dfs(root,to_string(root->val));
+        return result;
+
+     
+       
+    }TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        if(root==nullptr||root==q||root==p)return root;
+        TreeNode*left=lowestCommonAncestor(root->left,p,q);
+        TreeNode*right=lowestCommonAncestor(root->right,p,q);
+        if(left==NULL)return right;
+        else if(right==NULL)return left;
+         return root;
+
+    }
 };
