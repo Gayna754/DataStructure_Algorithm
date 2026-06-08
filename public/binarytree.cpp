@@ -678,4 +678,15 @@ void dfs(TreeNode*node,string path){
         PrevNode=root;
         
     }
+    TreeNode*PrevNode=NULL;
+    
+    void flatten(TreeNode* root) {
+        if(root==NULL)return;
+       flatten(root->right);
+       flatten(root->left);
+        root->right=PrevNode;
+        root->left=nullptr;
+        PrevNode=root;
+        
+    }
 };
