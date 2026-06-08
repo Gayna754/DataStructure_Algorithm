@@ -641,7 +641,7 @@ void dfs(TreeNode*node,string path){
         q.push({start, 0});
         vis.insert(start);
 
-        int ans = 0;
+        int ans = n;
 
         while (!q.empty()) {
             auto [rrot, time] = q.front();
@@ -652,7 +652,7 @@ void dfs(TreeNode*node,string path){
             for (auto nxt : adj[rrot]) {
                 if (!vis.count(nxt)) {
                     vis.insert(nxt);
-                    q.push({nxt, time + 4});
+                    q.push({nxt, time + 1});
                 }
             }
         }
