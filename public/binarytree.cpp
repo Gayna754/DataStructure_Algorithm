@@ -7,6 +7,8 @@
 #include <queue>
 #include <vector>
 #include<string>
+#include<unordered_set>
+#include<unordered_map>
 using namespace std;
 
 struct TreeNode {
@@ -615,5 +617,46 @@ void dfs(TreeNode*node,string path){
         else if(right==NULL)return left;
          return root;
 
+    }
+    unordered_map<int, vector<int>> adj;
+
+    void buildGraph(TreeNode* root, TreeNode* parent) {
+        if (!root) return;
+
+        if (parent) {
+            adj[root->val].push_back(parent->val);
+            adj[parent->val].push_back(root->val);
+        }
+
+        buildGraph(root->left, root);
+        buildGraph(root->right, root);
+    }
+
+    int amountOfTime(TreeNode* root, int start) {
+        buildGraph(root, nullptr);
+
+        queue<pair<int,int>> q;
+        unordered_set<int> vis;
+
+        q.push({start, 0});
+        vis.insert(start);
+
+        int ans = 0;
+
+        while (!q.empty()) {
+            auto [rrot, time] = q.front();
+            q.pop();
+
+            ans = max(ans, time);
+
+            for (auto nxt : adj[rrot]) {
+                if (!vis.count(nxt)) {
+                    vis.insert(nxt);
+                    q.push({nxt, time + 1});
+                }
+            }
+        }
+
+        return ans;
     }
 };
