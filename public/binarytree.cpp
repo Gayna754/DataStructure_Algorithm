@@ -834,9 +834,9 @@ TreeNode* insertIntoBST(TreeNode* root, int val) {
             count ++;
             if(count==k)return root->val;
            int right=  visit(root->right, k);
-           if(right != -1)
+           if(right != 0)
     return right;
-return 0;
+return -1;
 
       }
         
