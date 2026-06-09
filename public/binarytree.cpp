@@ -765,4 +765,24 @@ void dfs(TreeNode*node,string path){
     }
         return floor;
 }    
+TreeNode* insertIntoBST(TreeNode* root, int val) {
+        if(root==nullptr)return new TreeNode(val);
+         TreeNode*curr=root;  // copy root as in last root is to be returned
+         while(true){
+            if(curr->val<=val){
+                if(curr->right!=NULL)curr=curr->right;// if not null go right
+                  else{ curr->right=new TreeNode(val);
+                  break;}//when null insert val to right   
+                            
+              }else{ 
+                if(curr->left!=NULL)curr=curr->left;
+                 else{curr->left=new TreeNode(val);
+                 break;}
+                    
+            }
+            }
+         return root;
+
+        
+    }
 };
