@@ -641,7 +641,7 @@ void dfs(TreeNode*node,string path){
         q.push({start, 0});
         vis.insert(start);
 
-        int ans = n;
+        int ans = 0;
 
         while (!q.empty()) {
             auto [rrot, time] = q.front();
@@ -728,6 +728,23 @@ void dfs(TreeNode*node,string path){
         root->right=PrevNode;
         root->left=nullptr;
         PrevNode=root;
+        
+    }
+     int findCeil(TreeNode* root, int x) {
+        int ceil=-1;
+        while(root!=nullptr){
+            if(root->val==x){
+                ceil=root->val;
+                return ceil;
+            }
+            if(x>root->val){
+                root=root->right;
+            }
+            else{ceil=root->val;
+            root=root->left;
+        }
+       } return ceil;
+        
         
     }
 };
