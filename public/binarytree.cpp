@@ -747,4 +747,22 @@ void dfs(TreeNode*node,string path){
         
         
     }
+
+    int findFloor(TreeNode* root, int x) {
+         int floor=-1;
+        while(root!=nullptr){
+            if(root->val==x){
+                floor=root->val;
+                return floor;
+            }
+            if(x<root->val){
+                
+                root=root->left;
+            }
+            else{floor=root->val;
+                root=root->right;}
+        
+    }
+        return floor;
+}    
 };
