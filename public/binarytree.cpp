@@ -871,4 +871,24 @@ return -1;
         return root;
         
     }
+     bool traverse(TreeNode*root,unordered_map<int,int>&mp,int k){
+        if(root==NULL)return false;
+        if(mp.find(k-root->val)!=mp.end()){
+            return true;
+        }mp[(root->val)]++;
+        return traverse(root->left,mp,k) or traverse(root->right,mp,k);
+      }
+
+
+
+
+
+
+
+    bool findTarget(TreeNode* root, int k) {
+        unordered_map<int,int>mp;
+       return traverse(root,mp,k);
+         
+        
+    }
 };
