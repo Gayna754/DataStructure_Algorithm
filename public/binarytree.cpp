@@ -826,4 +826,27 @@ TreeNode* insertIntoBST(TreeNode* root, int val) {
 
         
     }
+      int count=0;
+      int visit(TreeNode*root,int k){
+        if(root==nullptr)return -1;
+          int left=visit(root->left,k);
+            if(left!=-1)return left;
+            count ++;
+            if(count==k)return root->val;
+           int right=  visit(root->right, k);
+           if(right != -1)
+    return right;
+return -1;
+
+      }
+        
+
+      
+
+
+
+    int kthSmallest(TreeNode* root, int k){
+       return visit(root,k);
+        
+    }
 };
