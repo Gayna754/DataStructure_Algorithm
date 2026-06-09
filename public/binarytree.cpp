@@ -849,4 +849,17 @@ return -1;
        return visit(root,k);
         
     }
+     bool visit(TreeNode*root,long minval,long maxval){
+  if (root==nullptr)return true;
+   if(root->val>=maxval|| root->val<=minval)return false;
+    return visit(root->left,minval,root->val)&& visit(root->right,root->val,maxval);
+    }
+
+
+
+
+    bool isValidBST(TreeNode* root) {
+        return visit (root,LONG_MIN,LONG_MAX);
+        
+    }
 };
