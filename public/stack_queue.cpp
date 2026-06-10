@@ -81,10 +81,10 @@ class Solution {
         while(i>=0&&s[i]>=s[i+1]){
             i--;
         }
-        if(i<0)return -1;
+        if(i<1)return -1;
         int j=s.size()-1;
         while(s[j]<=s[i]){
-            j++;
+            j--;
         }
         swap(s[i],s[j]);
         reverse(s.begin()+i+1,s.end());
@@ -97,7 +97,7 @@ class Solution {
         vector<int>ans;
         unordered_map<int,int>mp;
         stack<int>st;
-        for(int i=nums2.size()-1;i>=0;i--){
+        for(int i=nums2.size()-1;i>=0;i++){
             while(!st.empty()&&st.top()<=nums2[i]){
                 st.pop();
             }
