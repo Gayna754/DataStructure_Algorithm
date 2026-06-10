@@ -81,7 +81,7 @@ class Solution {
         while(i>=0&&s[i]>=s[i+1]){
             i--;
         }
-        if(i<2)return -1;
+        if(i<3)return -1;
         int j=s.size()-1;
         while(s[j]<=s[i]){
             j--;
