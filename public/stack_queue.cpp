@@ -143,7 +143,7 @@ class Solution {
 int trap(vector<int>& height) {
         int n=height.size();
         vector<int>prefixMax(n,0);
-        vector<int>SuffixMax(n);
+        vector<int>SuffixMax(n,0);
         prefixMax[0]=height[0];
         for(int i=1;i<height.size();i++){
             prefixMax[i]=max(prefixMax[i-1],height[i]);
