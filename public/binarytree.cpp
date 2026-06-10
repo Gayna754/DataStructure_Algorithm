@@ -826,7 +826,7 @@ TreeNode* insertIntoBST(TreeNode* root, int val) {
 
         
     }
-      int count=4;
+      int count=0;
       int visit(TreeNode*root,int k){
         if(root==nullptr)return -1;
           int left=visit(root->left,k);

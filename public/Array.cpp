@@ -13,6 +13,7 @@ class Solution {
 
 
 public:
+
  void moveZeroes(vector<int>& nums) {
         int p=0;
         int n=nums.size();
