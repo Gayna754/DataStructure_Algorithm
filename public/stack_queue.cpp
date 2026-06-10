@@ -84,7 +84,7 @@ class Solution {
         if(i<0)return -1;
         int j=s.size()-1;
         while(s[j]<=s[i]){
-            j--;
+            j++;
         }
         swap(s[i],s[j]);
         reverse(s.begin()+i+1,s.end());
