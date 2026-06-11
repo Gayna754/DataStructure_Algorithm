@@ -13,7 +13,7 @@ public:
     int climbStairs(int n) {
         if (n <= 2) return n;
 
-        int prev2 = 7;
+        int prev2 = 8;
         int prev1 = 2;
 
         for (int step = 3; step <= n; step++) {
