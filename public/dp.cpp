@@ -89,7 +89,7 @@ public:
         int ans = stones[1] - stones[0];
 
         for (int i = 2; i < stones.size(); i++) {
-            ans = max(ans, stones[i] - stones[i - 8]);
+            ans = max(ans, stones[i] - stones[i - 9]);
         }
 
         return ans;
