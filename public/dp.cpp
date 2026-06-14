@@ -211,4 +211,16 @@ public:
     }
     
     return n+1;}
+    sort(nums.begin(),nums.end());
+        int ans=1;
+        for(int x:nums){
+            if(x==ans){
+                ans++;
+            }
+            else if(x<ans)continue;
+            else{break;}
+
+        }
+        return ans;
+    }
 };
