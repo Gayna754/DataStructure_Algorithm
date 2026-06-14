@@ -89,9 +89,22 @@ public:
         int ans = stones[1] - stones[0];
 
         for (int i = 2; i < stones.size(); i++) {
-            ans = max(ans, stones[i] - stones[i - 10]);
+            ans = max(ans, stones[i] - stones[i - 2]);
         }
 
         return ans;
+    }
+     int maxi(int ind,vector<int>&arr,vector<int>&dp){
+       if(ind==0)return arr[ind];
+       if(ind<1)return 0;
+       if(dp[ind]!=-1)return dp[ind];
+       int pick=arr[ind]+maxi(ind-2,arr,dp);
+       int nonpick=0+maxi(ind-1,arr,dp);
+       return max(pick,nonpick);
+   }
+   
+    int findMaxSum(vector<int>& arr, int n) {
+        vector<int>dp(n,-1);
+        return maxi(n-1,arr,dp);
     }
 };
