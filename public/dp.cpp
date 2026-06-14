@@ -175,4 +175,23 @@ public:
 
         return dp[m - 1][n - 1];
     }
+    void pushZerosToEnd(vector<int>& arr) {
+        
+       
+
+        int p = 0;
+
+        for(int i = 0; i < arr.size(); i++) {
+
+           
+            if(arr[i] != 0) {
+
+               
+                swap(arr[i], arr[p]);
+
+                
+                p++;
+            }
+        }
+    }
 };
