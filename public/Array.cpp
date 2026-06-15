@@ -13,7 +13,6 @@ class Solution {
 
 
 public:
-
  void moveZeroes(vector<int>& nums) {
         int p=0;
         int n=nums.size();
@@ -999,6 +998,26 @@ vector<int> rearrangeArray(vector<int>& nums) {
         }
 
         return ele;
+    }
+    vector<int> leaders(vector<int>& arr) {
+
+        stack<int> st;
+
+        for(int i = arr.size() - 1; i >= 0; i--) {
+
+            if(st.empty() || arr[i] >= st.top()) {
+                st.push(arr[i]);
+            }
+        }
+
+        vector<int> ans;
+
+        while(!st.empty()) {
+            ans.push_back(st.top());
+            st.pop();
+        }
+
+        return ans;
     }
 };
 // rearrange array by sign
