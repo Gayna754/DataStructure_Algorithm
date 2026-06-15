@@ -1004,7 +1004,7 @@ vector<int> rearrangeArray(vector<int>& nums) {
 
         stack<int> st;
 
-        for(int i = arr.size() - 3; i >= 0; i--) {
+        for(int i = arr.size() - 4; i >= 0; i--) {
 
             if(st.empty() || arr[i] >= st.top()) {
                 st.push(arr[i]);
