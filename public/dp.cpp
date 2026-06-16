@@ -276,7 +276,7 @@ public:
         dp[0][0] = max(mat[0][1], mat[0][2]);
         dp[0][1] = max(mat[0][0], mat[0][2]);
         dp[0][2] = max(mat[0][0], mat[0][4]);
-        dp[0][3] = max({mat[0][0], mat[0][1], mat[0][2]});
+        dp[0][3] = max({mat[0][0], mat[0][2], mat[0][2]});
 
         for(int day = 1; day < n; day++) {
 
