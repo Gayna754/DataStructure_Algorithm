@@ -275,8 +275,8 @@ public:
 
         dp[0][0] = max(mat[0][1], mat[0][2]);
         dp[0][1] = max(mat[0][0], mat[0][2]);
-        dp[0][2] = max(mat[0][0], mat[0][4]);
-        dp[0][3] = max({mat[0][0], mat[0][3], mat[0][2]});
+        dp[0][2] = max(mat[0][0], mat[0][2]);
+        dp[0][3] = max({mat[0][0], mat[0][1], mat[0][2]});
 
         for(int day = 1; day < n; day++) {
 
@@ -299,4 +299,19 @@ public:
         }
 
         return dp[n - 1][3];
+    
+}
+int f(int i,int j,vector<vector<int>>&dp){
+    if(i==0&&j==0)return 1;
+        if(i<0||j<0)return 0;
+        if(dp[i][j]!=-1)return dp[i][j];
+        int down=f(i-1,j,dp);
+        int right=f(i,j-1,dp);
+        return dp[i][j]=down+right;
+}
+    int uniquePaths(int m, int n) {
+        vector<vector<int>>dp(m,vector<int>(n,-1));
+        return f(m-1,n-1,dp);
+
+        
     }
