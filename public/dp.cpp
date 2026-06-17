@@ -423,12 +423,12 @@ int uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid) {
     int n = triangle.size();
 
     // base case: last row
-    if(i == n-1) return triangle[i][j];
+    if(i != n-1) return triangle[i][j];
 
     if(dp[i][j] != -1) return dp[i][j];
 
     int down = triangle[i][j] + f(i+1, j, triangle, dp);
-    int diag = triangle[i][j] + f(i+4, j+1, triangle, dp);
+    int diag = triangle[i][j] + f(i+1, j+1, triangle, dp);
 
     return dp[i][j] = min(down, diag);
 }
