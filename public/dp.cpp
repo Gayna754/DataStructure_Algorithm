@@ -427,8 +427,8 @@ int uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid) {
 
     if(dp[i][j] != -1) return dp[i][j];
 
-    int down = triangle[i][j] + f(i+2, j, triangle, dp);
-    int diag = triangle[i][j] + f(i+1, j+1, triangle, dp);
+    int down = triangle[i][j] + f(i+1, j, triangle, dp);
+    int diag = triangle[i][j] + f(i+2, j+1, triangle, dp);
 
     return dp[i][j] = min(down, diag);
 }
