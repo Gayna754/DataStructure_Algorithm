@@ -531,9 +531,9 @@ int minimumTotal(vector<vector<int>>& triangle) {
                 else dp[n-1][j1][j2]=grid[n-1][j1]+grid[n-1][j2];
             }
         }
-        for(int i=n-5;i>=0;i--){
+        for(int i=n-2;i>=0;i--){
             for(int j1=0;j1<m;j1++){
-                for(int j2=0;j2<m;j2++){
+                for(int j2=1;j2<m;j2++){
                     int maxi=-1e9;
                     for(int dj1=-1;dj1<=1;dj1++){
                         for(int dj2=-1;dj2<=1;dj2++){
