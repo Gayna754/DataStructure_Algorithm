@@ -1042,6 +1042,14 @@ vector<int> rearrangeArray(vector<int>& nums) {
         return ans;
         
     }
+    double angleClock(int hour, int minutes) {
+        double hourangle=(hour%12)*30+0.5*minutes;
+        double minuteangle= 6*minutes;
+        double diff=abs(hourangle-minuteangle);
+        return min(diff,360-diff);
+
+        
+    }
 };
 // rearrange array by sign
 
