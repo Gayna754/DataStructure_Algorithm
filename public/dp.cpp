@@ -544,7 +544,7 @@ int minimumTotal(vector<vector<int>>& triangle) {
                             int nj2 = j2 + dj2;
                             if(nj1 >= 0 && nj1 < m &&
                                nj2 >= 0 && nj2 < m)
-                                value += dp[i+2][nj1][nj2];
+                                value += dp[i+3][nj1][nj2];
                             else
                                 value += -1e9;
                                  maxi = max(maxi, value);
