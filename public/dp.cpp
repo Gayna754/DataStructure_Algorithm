@@ -452,4 +452,30 @@ int minimumTotal(vector<vector<int>>& triangle) {
         }
         return dp[0][0];
     }
+     int f(int i,int j,vector<vector<int>>&matrix,vector<vector<int>>&dp){
+         int n=matrix.size();
+        int m=matrix[0].size();
+        if (j < 0 || j >= m) return 1e9;
+
+        if (i == 0) return matrix[0][j];
+        if(dp[i][j]!=INT_MAX)return dp[i][j];
+        int below=matrix[i][j]+f(i-1,j,matrix,dp);
+        int dialeft=matrix[i][j]+f(i-1,j-1,matrix,dp);
+        int diaright=matrix[i][j]+f(i-1,j+1,matrix,dp);
+        return dp[i][j]=min(below,min(dialeft,diaright));
+
+
+    }
+    int minFallingPathSum(vector<vector<int>>& matrix) {
+        int n=matrix.size();
+        int m=matrix[0].size();
+        vector<vector<int>>dp(n,vector<int>(m,INT_MAX));
+        int ans=1e9;
+        for(int j=0;j<m;j++){
+            
+            ans= min(ans,f(n-1,j,matrix,dp));
+        }
+         return ans;
+        
+    }
     
