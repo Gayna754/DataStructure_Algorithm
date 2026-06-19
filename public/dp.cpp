@@ -526,7 +526,7 @@ int minimumTotal(vector<vector<int>>& triangle) {
             vector<vector<int>>(m, vector<int>(m, 0))
         );
         for(int j1=0;j1<m;j1++){
-            for(int j2=1;j2<m;j2++){
+            for(int j2=0;j2<m;j2++){
                 if(j1==j2)dp[n-1][j1][j2]=grid[n-1][j1];
                 else dp[n-1][j1][j2]=grid[n-1][j1]+grid[n-1][j2];
             }
@@ -559,6 +559,33 @@ int minimumTotal(vector<vector<int>>& triangle) {
         }
           return dp[0][0][m-1];
 
+        
+    }
+    int f(int r1,int c1,int r2,vector<vector<int>>&grid,vector<vector<vector<int>>>&dp){
+    int n=grid.size();
+     int c2=r1+c1-r2;
+    if(r1>=n||r2>=n||c1>=n||c2>=n){
+        return -1e9;
+    }
+    if(grid[r1][c1]==-1||grid[r2][c2]==-1)return -1e9;
+    if(r1==n-1&&c1==n-1)return grid[r1][c1];
+    if(dp[r1][c1][r2]!=-1)return dp[r1][c1][r2];
+    int cherries=0;
+    if(r1==r2&&c1==c2){
+        cherries=grid[r1][c1];
+    }
+    else cherries=grid[r1][c1]+grid[r2][c2];
+    int ans=max({
+        f(r1,c1+1,r2,grid,dp),f(r1,c1+1,r2+1,grid,dp),f(r1+1,c1,r2,grid,dp),f(r1+1,c1,r2+1,grid,dp)
+    });
+    return dp[r1][c1][r2]=cherries+ans;
+        
+    
+}
+    int cherryPickup(vector<vector<int>>& grid) {
+        int n=grid.size();
+        vector<vector<vector<int>>>dp(n,vector<vector<int>>(n,vector<int>(n,-1)));
+        return max(0,f(0,0,0,grid,dp));
         
     }
     
