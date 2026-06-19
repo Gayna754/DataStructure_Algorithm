@@ -718,7 +718,7 @@ int minimumTotal(vector<vector<int>>& triangle) {
 
                 bool take = false;
                 if (nums[i] <= t)
-                    take = prev[t - nums[i]];
+                    take = prev[t - nums[i-1]];
 
                 curr[t] = take || notTake;
             }
