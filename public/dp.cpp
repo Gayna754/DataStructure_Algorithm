@@ -876,4 +876,70 @@ int minimumDifference(vector<int>& nums) {
 
         return (int)ans;
     }
+     int minimumDifference(vector<int>& nums) {
+        int m = nums.size();
+        int n = m / 2;
+
+        long long total = 0;
+        for (int x : nums) total += x;
+
+        vector<vector<long long>> left(n + 1), right(n + 1);
+
+        for (int mask = 0; mask < (1 << n); mask++) {
+            long long sumL = 0;
+            long long sumR = 0;
+            int cnt = 0;
+
+            for (int i = 0; i < n; i++) {
+                if (mask & (1 << i)) {
+                    cnt++;
+                    sumL += nums[i];
+                    sumR += nums[i + n];
+                }
+            }
+
+            left[cnt].push_back(sumL);
+            right[cnt].push_back(sumR);
+        }
+
+        for (int k = 0; k <= n; k++) {
+            sort(right[k].begin(), right[k].end());
+        }
+
+        long long ans = LLONG_MAX;
+
+        for (int k = 0; k <= n; k++) {
+
+            for (long long s1 : left[k]) {
+
+                int need = n - k;
+
+                long long target =
+                    total / 2 - s1;
+
+                auto &vec = right[need];
+
+                auto it = lower_bound(
+                    vec.begin(),
+                    vec.end(),
+                    target
+                );
+
+                if (it != vec.end()) {
+                    long long chosen = s1 + *it;
+                    ans = min(ans,
+                              llabs(total - 2 * chosen));
+                }
+
+                if (it != vec.begin()) {
+                    --it;
+                    long long chosen = s1 + *it;
+                    ans = min(ans,
+                              llabs(total - 2 * chosen));
+                }
+            }
+        }
+
+        return (int)ans;
+    }
     
