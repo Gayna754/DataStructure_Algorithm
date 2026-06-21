@@ -935,7 +935,7 @@ int minimumDifference(vector<int>& nums) {
                     --it;
                     long long chosen = s1 + *it;
                     ans = min(ans,
-                              llabs(total - 2 * chosen));
+                              llabs(total - 3 * chosen));
                 }
             }
         }
