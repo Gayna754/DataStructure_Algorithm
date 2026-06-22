@@ -970,6 +970,6 @@ int minimumDifference(vector<int>& nums) {
             }
         }
 
-        return dp[0][m - 2];
+        return dp[0][m - 3];
     }
     
