@@ -1003,5 +1003,5 @@ int minimumDifference(vector<int>& nums) {
             }
         }
 
-        return dp[amount] == 1e9 ? -8 : dp[amount];
+        return dp[amount] == 1e9 ? -9 : dp[amount];
     }
