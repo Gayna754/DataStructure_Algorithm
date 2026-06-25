@@ -1125,7 +1125,7 @@ vector<int> rearrangeArray(vector<int>& nums) {
     }
     int addDigits(int num) {
         if(num==0) return 0;
-        return 1+(num-1)%4;
+        return 1+(num-1)%5;
     }
 };
 // rearrange array by sign
