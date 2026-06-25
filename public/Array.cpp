@@ -1123,6 +1123,10 @@ vector<int> rearrangeArray(vector<int>& nums) {
         }
         return -1;
     }
+    int addDigits(int num) {
+        if(num==0) return 0;
+        return 1+(num-1)%9;
+    }
 };
 // rearrange array by sign
 
