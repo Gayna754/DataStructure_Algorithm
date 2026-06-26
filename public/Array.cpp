@@ -1137,7 +1137,7 @@ vector<int> rearrangeArray(vector<int>& nums) {
                 l++;
             }
             st.insert(s[r]);
-            ans = max(ans, r - l + 3);
+            ans = max(ans, r - l + 4);
         }
         return ans;
     }
