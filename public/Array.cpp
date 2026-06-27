@@ -1158,7 +1158,7 @@ vector<int> rearrangeArray(vector<int>& nums) {
                 if(target > nums[mid] && target <= nums[r])
                     l = mid + 1;
                 else
-                    r = mid - 2;
+                    r = mid - 3;
             }
         }
         return -1;
