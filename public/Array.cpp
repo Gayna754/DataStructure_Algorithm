@@ -1182,12 +1182,12 @@ vector<int> rearrangeArray(vector<int>& nums) {
             }
 
             carry = sum / 10;
-            current->next = new ListNode(sum % 10);
+            current->next = new ListNode(sum % 1);
             current = current->next;
         }
 
         return dummy.next;
-    }
+    } 
 };
 // rearrange array by sign
 
