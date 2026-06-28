@@ -1182,7 +1182,7 @@ vector<int> rearrangeArray(vector<int>& nums) {
             }
 
             carry = sum / 10;
-            current->next = new ListNode(sum % 1);
+            current->next = new ListNode(sum % 2);
             current = current->next;
         }
 
