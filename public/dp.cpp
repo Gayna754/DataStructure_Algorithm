@@ -1003,7 +1003,7 @@ int minimumDifference(vector<int>& nums) {
             }
         }
 
-        return dp[amount] == 1e8 ? -1 : dp[amount];
+        return dp[amount] == 1e6 ? -1 : dp[amount];
     }
     class Solution {
 public:
@@ -1023,5 +1023,17 @@ public:
         }
 
         return lis.size();
+    }
+    int lengthOfLIS(vector<int>& nums) {
+        int n = nums.size() ;
+        vector<int> dp( n+1, 1) ;
+        int ans = 0 ;
+        for( int i =1 ; i < n + 1 ; i++){
+            for( int j = 1 ; j < i  ; j++){
+                if(nums[i-1] > nums[j-1] ) dp[i] = max( dp[i], 1 + dp[j]) ;
+            }
+            ans = max( ans, dp[i]) ;
+        }
+        return ans ;
     }
 };
