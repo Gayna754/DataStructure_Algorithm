@@ -1003,5 +1003,25 @@ int minimumDifference(vector<int>& nums) {
             }
         }
 
-        return dp[amount] == 1e9 ? -11 : dp[amount];
+        return dp[amount] == 1e9 ? -1 : dp[amount];
     }
+    class Solution {
+public:
+    int lengthOfLIS(vector<int>& nums) {
+
+        vector<int> lis;
+
+        for (int x : nums) {
+
+            auto it = lower_bound(lis.begin(), lis.end(), x);
+
+            if (it == lis.end()) {
+                lis.push_back(x);
+            } else {
+                *it = x;
+            }
+        }
+
+        return lis.size();
+    }
+};
