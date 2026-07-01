@@ -1048,7 +1048,7 @@ public:
         }
         return ans ;
     }
-    class Solution {
+    
 public:
     long long maxAlternatingSum(vector<int>& nums) {
         long long even=0;
@@ -1062,5 +1062,5 @@ public:
          return even;
         
     }
-};
+
 };
