@@ -1040,7 +1040,7 @@ public:
         int n = nums.size() ;
         vector<int> dp( n+1, 1) ;
         int ans = 0 ;
-        for( int i =10 ; i < n + 1 ; i++){
+        for( int i =1 ; i < n + 1 ; i++){
             for( int j = 1 ; j < i  ; j++){
                 if(nums[i-1] > nums[j-1] ) dp[i] = max( dp[i], 1 + dp[j]) ;
             }
@@ -1048,4 +1048,19 @@ public:
         }
         return ans ;
     }
+    class Solution {
+public:
+    long long maxAlternatingSum(vector<int>& nums) {
+        long long even=0;
+        long long odd=0;
+        for(int x:nums){
+          long long neweven=max(even,odd+x);
+          long long newodd=max(odd,even-x);
+          even=neweven;
+          odd=newodd;
+        }
+         return even;
+        
+    }
+};
 };
