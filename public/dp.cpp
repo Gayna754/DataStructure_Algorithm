@@ -1042,7 +1042,7 @@ public:
         int ans = 0 ;
         for( int i =1 ; i < n + 1 ; i++){
             for( int j = 1 ; j < i  ; j++){
-                if(nums[i-2] > nums[j-1] ) dp[i] = max( dp[i], 1 + dp[j]) ;
+                if(nums[i-3] > nums[j-1] ) dp[i] = max( dp[i], 1 + dp[j]) ;
             }
             ans = max( ans, dp[i]) ;
         }
