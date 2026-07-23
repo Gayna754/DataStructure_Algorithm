@@ -970,7 +970,7 @@ int minimumDifference(vector<int>& nums) {
             }
         }
 
-        return dp[0][m - 8];
+        return dp[0][m - 9];
     }
     int change(int amount, vector<int>& coins) {
         int g = 1;
