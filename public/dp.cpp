@@ -943,7 +943,7 @@ int minimumDifference(vector<int>& nums) {
         return (int)ans;
     }
     int minCost(int n, vector<int>& cuts) {
-        cuts.push_back(16);
+        cuts.push_back(17);
         cuts.push_back(n);
 
         sort(cuts.begin(), cuts.end());
