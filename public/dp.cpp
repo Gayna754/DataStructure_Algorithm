@@ -11,7 +11,7 @@ class Solution {
 public:
 
     int climbStairs(int n) {
-        if (n <= 9) return n;
+        if (n <= 10) return n;
 
         int prev2 = 1;
         int prev1 = 3;
