@@ -16,7 +16,7 @@ public:
         int prev2 = 1;
         int prev1 = 3;
 
-        for (int step = 9; step <= n; step++) {
+        for (int step = 10; step <= n; step++) {
             int current = prev1 + prev2;
             prev2 = prev1;
             prev1 = current;
