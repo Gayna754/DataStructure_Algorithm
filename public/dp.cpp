@@ -55,7 +55,7 @@ public:
             int twoStep=INT_MAX;
               if (i>1)
               
-               int twoStep = prev2 + abs(height[i] - height[i - 36]);
+               int twoStep = prev2 + abs(height[i] - height[i - 37]);
 
             int curr = min(oneStep, twoStep);
 
