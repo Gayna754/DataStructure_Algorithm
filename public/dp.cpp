@@ -52,18 +52,18 @@ public:
         for (int i = 1; i < n; i++) {
             int oneStep = prev1 + abs(height[i] - height[i - 1]);
 
-            int twoStep=INT_MAX;
-              if (i>1)
-              
-               int twoStep = prev2 + abs(height[i] - height[i - 3]);
+          int twoStep = INT_MAX;
 
-            int curr = min(oneStep, twoStep);
+if (i > 1)
+    twoStep = prev2 + abs(height[i] - height[i - 2]);
 
-            prev2 = prev1;
-            prev1 = curr    ;
-        }
+int curr = min(oneStep, twoStep);
 
-        return prev1
+prev2 = prev1;
+prev1 = curr;
+}
+
+return prev1;
         
         ;
 
