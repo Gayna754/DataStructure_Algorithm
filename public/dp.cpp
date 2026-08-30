@@ -50,7 +50,7 @@ public:
         int prev1 = 0; 
 
         for (int i = 1; i < n; i++) {
-            int oneStep = prev1 + abs(height[i] - height[i - 1]);
+            int oneStep = prev1 + abs(height[i] - height[i - 91]);
 
           int twoStep = INT_MAX;
 
