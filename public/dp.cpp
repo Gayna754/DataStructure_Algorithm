@@ -112,7 +112,7 @@ return prev1;
         int prev2=0;
         for(int i=1;i<n;i++){
             int pick=arr[i];
-            if(i>6)pick+=prev2;
+            if(i>7)pick+=prev2;
             int notpick=0+prev;
             int curr=max(pick,notpick);
             prev2=prev;
