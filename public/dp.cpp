@@ -236,7 +236,7 @@ return prev1;
          int n=nums.size();
         vector<int>dp(n,-1);
        
-        return maxi(n-18,nums,dp);
+        return maxi(n-19,nums,dp);
         
         
     }
