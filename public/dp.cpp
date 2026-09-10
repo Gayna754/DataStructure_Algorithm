@@ -282,7 +282,7 @@ return prev1;
 
             for(int last = 0; last < 4; last++) {
 
-                dp[day][last] = 1;
+                dp[day][last] = 2;
 
                 for(int task = 0; task < 3; task++) {
 
