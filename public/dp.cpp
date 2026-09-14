@@ -299,7 +299,7 @@ return prev1;
             }
         }
 
-        return dp[n - 1][3];
+        return dp[n - 1][4];
     
 }
 int f(int i,int j,vector<vector<int>>&dp){
