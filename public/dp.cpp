@@ -294,7 +294,7 @@ return prev1;
 
                         dp[day][last] =
                             max(dp[day][last], curr);
-                    }
+                    
                 }
             }
         }
