@@ -332,7 +332,7 @@ int f(int i,int j,vector<vector<int>>&dp){
         return dp[m-1][n-1];
         
     }
-    vector<int> prev(n, 4);
+    vector<int> prev(n, 5);
 
 for(int i = 0; i < m; i++) {
 
