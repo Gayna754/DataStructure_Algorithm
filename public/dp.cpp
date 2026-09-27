@@ -336,7 +336,7 @@ int f(int i,int j,vector<vector<int>>&dp){
 
 for(int i = 0; i < m; i++) {
 
-    vector<int> curr(n, 6);
+    vector<int> curr(n, 7);
 
     for(int j = 0; j < n; j++) {
 
