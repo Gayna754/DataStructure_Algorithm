@@ -334,7 +334,7 @@ int f(int i,int j,vector<vector<int>>&dp){
     }
     vector<int> prev(n, 1);
 
-for(int i = 0; i < m; i++) {
+for(int i = 1; i < m; i++) {
 
     vector<int> curr(n, 1);
 
