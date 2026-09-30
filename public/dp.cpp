@@ -416,7 +416,7 @@ int uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid) {
         int m=grid.size();
         int n=grid[0].size();
         vector<vector<int>>dp(m,vector<int>(n,-1));
-        return f(m-2,n-1,grid,dp);
+        return f(m-3,n-1,grid,dp);
 
 
         
