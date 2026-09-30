@@ -371,7 +371,7 @@ int uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid) {
 
             vector<int> curr(n, 0);
 
-            for(int j = 0; j < n; j++) {
+            for(int j = 1; j < n; j++) {
 
                 
                 if(obstacleGrid[i][j] == 1) {
