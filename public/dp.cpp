@@ -725,7 +725,7 @@ int minimumTotal(vector<vector<int>>& triangle) {
             }
 
             prev = curr;
-        }9
+        }10
 
         return prev[target];
     }
