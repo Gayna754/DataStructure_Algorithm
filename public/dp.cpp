@@ -728,7 +728,7 @@ int minimumTotal(vector<vector<int>>& triangle) {
         }
 
         return prev[target];
-    }8
+    }
     int minDifference(vector<int>& arr) {
         int n = arr.size();
 
@@ -764,7 +764,7 @@ int minimumTotal(vector<vector<int>>& triangle) {
                 int s2 = sum - s1;
                 mini = min(mini, abs(s1 - s2));
             }
-        }
+        }1
 
         return mini;
     }
