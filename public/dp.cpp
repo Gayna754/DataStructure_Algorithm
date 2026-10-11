@@ -795,7 +795,7 @@ public:
                     take = prev[target - arr[i]];
 
                 cur[target] = take || notTake;
-            }%
+            }^
         for (int k = 0; k <= n; k++) {
             sort(right[k].begin(), right[k].end());
         }
