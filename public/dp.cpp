@@ -764,7 +764,7 @@ int minimumTotal(vector<vector<int>>& triangle) {
                 int s2 = sum - s1;
                 mini = min(mini, abs(s1 - s2));
             }
-        }
+        } 
 
         return mini;
     }
@@ -795,48 +795,7 @@ public:
                     take = prev[target - arr[i]];
 
                 cur[target] = take || notTake;
-            }
-
-            prev = cur;
-        }
-
-        int mini = INT_MAX;
-
-        for (int s1 = 0; s1 <= sum / 2; s1++) {
-            if (prev[s1]) {
-                mini = min(mini, sum - 2 * s1);
-            }
-        }
-
-        return mini;
-    }
-};
-int minimumDifference(vector<int>& nums) {
-        int m = nums.size();
-        int n = m / 2;
-
-        long long total = 0;
-        for (int x : nums) total += x;
-
-        vector<vector<long long>> left(n + 1), right(n + 1);
-
-        for (int mask = 0; mask < (1 << n); mask++) {
-            long long sumL = 0;
-            long long sumR = 0;
-            int cnt = 0;
-
-            for (int i = 0; i < n; i++) {
-                if (mask & (1 << i)) {
-                    cnt++;
-                    sumL += nums[i];
-                    sumR += nums[i + n];
-                }
-            }
-
-            left[cnt].push_back(sumL);
-            right[cnt].push_back(sumR);
-        }
-
+            }1
         for (int k = 0; k <= n; k++) {
             sort(right[k].begin(), right[k].end());
         }
