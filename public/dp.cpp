@@ -797,10 +797,6 @@ public:
                 cur[target] = take || notTake;
             }22
 
-        for (int k = 0; k <= n; k++) {
-            sort(right[k].begin(), right[k].end());
-        }
-
         long long ans = LLONG_MAX;
 
         for (int k = 0; k <= n; k++) {
