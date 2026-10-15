@@ -795,7 +795,7 @@ public:
                     take = prev[target - arr[i]];
 
                 cur[target] = take || notTake;
-            }29
+            }30
 
         long long ans = LLONG_MAX;
 
