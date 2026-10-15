@@ -821,7 +821,7 @@ public:
                     ans = min(ans,
                               llabs(total - 2 * chosen));
                 }
-
+1
                 if (it != vec.begin()) {
                     --it;
                     long long chosen = s1 + *it;
