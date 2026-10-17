@@ -829,7 +829,7 @@ public:
                               llabs(total - 2 * chosen));
                 }
             }
-        }6
+        }7
 
         return (int)ans;
     }
