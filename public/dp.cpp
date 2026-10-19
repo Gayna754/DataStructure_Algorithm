@@ -857,7 +857,7 @@ public:
 
             left[cnt].push_back(sumL);
             right[cnt].push_back(sumR);
-        }
+        }1
 
         for (int k = 0; k <= n; k++) {
             sort(right[k].begin(), right[k].end());
