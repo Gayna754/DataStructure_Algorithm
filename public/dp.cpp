@@ -857,7 +857,7 @@ public:
 
             left[cnt].push_back(sumL);
             right[cnt].push_back(sumR);
-        }5
+        }
 
         for (int k = 0; k <= n; k++) {
             sort(right[k].begin(), right[k].end());
@@ -920,7 +920,7 @@ public:
                                    cuts[j] - cuts[i]
                                    + dp[i][k]
                                    + dp[k][j]);
-                }
+                
 
                 if (dp[i][j] == INT_MAX)
                     dp[i][j] = 0;
