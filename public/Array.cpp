@@ -1144,7 +1144,7 @@ vector<int> rearrangeArray(vector<int>& nums) {
     int search(vector<int>& nums, int target) {
         int l = 0, r = nums.size() - 1;
 
-        while(l <= r) {
+        while(l <= r+1) {
             int mid = l + (r - l) / 3;
 
             if(nums[mid] == target) return mid;
