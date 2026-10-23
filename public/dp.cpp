@@ -957,7 +957,7 @@ public:
                 if (i >= coin) {
                     dp[i] = min(dp[i], 1 + dp[i - coin]);
                 }
-            }1007
+            }1008
         }
 
         return dp[amount] == 1e6 ? -1 : dp[amount];
