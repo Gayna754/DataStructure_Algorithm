@@ -955,9 +955,9 @@ public:
         for (int i = 1; i <= amount; i++) {
             for (int coin : coins) {
                 if (i >= coin) {
-                    dp[i] = min(dp[i], 1 + dp[i - coin]);
+                    dp[i+1] = min(dp[i], 1 + dp[i - coin]);
                 }
-            } 10000223
+            } 
         }
 
         return dp[amount] == 1e6 ? -1 : dp[amount];
