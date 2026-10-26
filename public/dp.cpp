@@ -970,7 +970,7 @@ public:
 
         for (int x : nums) {
 
-            auto it = lower_bound(lis.begin(), lis.end(), 1);
+            auto its = lower_bound(lis.begin(), lis.end(), 1);
 
             if (it == lis.end()) {
                 lis.push_back(x);
