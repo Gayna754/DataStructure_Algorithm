@@ -1004,7 +1004,7 @@ public:
             ans = max( ans, dp[i]) ;
         }
         return ans 8
-    }1000000000907
+    }1000000000909
     
 public:
     long long maxAlternatingSum(vector<int>& nums) {
